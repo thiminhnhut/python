@@ -1,0 +1,94 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="humidex_8h" kind="file" language="C++">
+    <compoundname>humidex.h</compoundname>
+    <includes local="no">math.h</includes>
+    <incdepgraph>
+      <node id="0">
+        <label>/home/minhnhut/Dropbox/Bitbucket/hnxcan/smartac/code/libraries/CustomLibs/humidex/humidex.h</label>
+        <link refid="humidex.h"/>
+        <childnode refid="1" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>math.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="humidex_8h_1ab2045f1f88a4ec5d2f01b44ea649ea00" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float HumIndex</definition>
+        <argsstring>(float T, float H)</argsstring>
+        <name>HumIndex</name>
+        <param>
+          <type>float</type>
+          <declname>T</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>H</declname>
+        </param>
+        <briefdescription>
+<para>Function tinh chi so Humindex. </para>        </briefdescription>
+        <detaileddescription>
+<para>Cong thuc tinh: Humindex = T + 5/9 * (e - 10)</para><para>Trong do: e = 6.112 * 10^(7.5 * T/(237.7 + T))*H/100</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>nhiet do (do C) </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>H</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>do am (%) (kieu float)</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><itemizedlist>
+<listitem><para>Chi so humidex </para></listitem></itemizedlist>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/minhnhut/Dropbox/Bitbucket/hnxcan/smartac/code/libraries/CustomLibs/humidex/humidex.h" line="18" column="1" bodyfile="/home/minhnhut/Dropbox/Bitbucket/hnxcan/smartac/code/libraries/CustomLibs/humidex/humidex.h" bodystart="18" bodyend="23"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="17"><highlight class="preprocessor">#include<sp/>&lt;math.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>HumIndex(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>T,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>H){</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>e<sp/>=<sp/>6.112*powf(10.0,<sp/>7.5*T/(237.7<sp/>+<sp/>T))*H/100.0;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>hindex<sp/>=<sp/>T<sp/>+<sp/>5.0/9.0*(e<sp/>-<sp/>10.0);</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>hindex;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Example</highlight></codeline>
+<codeline lineno="26"><highlight class="comment">//=============================================</highlight></codeline>
+<codeline lineno="27"><highlight class="comment"></highlight></codeline>
+<codeline lineno="28"><highlight class="comment">#include<sp/>&lt;Arduino.h&gt;</highlight></codeline>
+<codeline lineno="29"><highlight class="comment">#include<sp/>&quot;../../libraries/humindex/humindex.h&quot;</highlight></codeline>
+<codeline lineno="30"><highlight class="comment"></highlight></codeline>
+<codeline lineno="31"><highlight class="comment">void<sp/>setup(){</highlight></codeline>
+<codeline lineno="32"><highlight class="comment"><sp/><sp/><sp/><sp/>Serial.begin(9600);</highlight></codeline>
+<codeline lineno="33"><highlight class="comment"><sp/><sp/><sp/><sp/>float<sp/>T<sp/>=<sp/>32.0,<sp/>H<sp/>=<sp/>70.0;</highlight></codeline>
+<codeline lineno="34"><highlight class="comment"><sp/><sp/><sp/><sp/>float<sp/>e<sp/>=<sp/>HumIndex(T,<sp/>H);</highlight></codeline>
+<codeline lineno="35"><highlight class="comment"><sp/><sp/><sp/><sp/>Serial.println(e);</highlight></codeline>
+<codeline lineno="36"><highlight class="comment">}</highlight></codeline>
+<codeline lineno="37"><highlight class="comment"></highlight></codeline>
+<codeline lineno="38"><highlight class="comment">void<sp/>loop(){</highlight></codeline>
+<codeline lineno="39"><highlight class="comment"><sp/><sp/><sp/><sp/>;</highlight></codeline>
+<codeline lineno="40"><highlight class="comment">}</highlight></codeline>
+<codeline lineno="41"><highlight class="comment"></highlight></codeline>
+<codeline lineno="42"><highlight class="comment">//=============================================</highlight></codeline>
+<codeline lineno="43"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/minhnhut/Dropbox/Bitbucket/hnxcan/smartac/code/libraries/CustomLibs/humidex/humidex.h"/>
+  </compounddef>
+</doxygen>
