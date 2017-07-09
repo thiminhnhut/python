@@ -11,12 +11,10 @@
                 <link refid="humidex.h"/>
                 <childnode refid="1" relation="include"></childnode>
             </node>
-
             <node id="1">
                 <label>math.h</label>
             </node>
         </incdepgraph>
-
         <sectiondef kind="func">
             <memberdef kind="function" id="humidex_8h_1ab2045f1f88a4ec5d2f01b44ea649ea00" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
                 <type>float</type>
