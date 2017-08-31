@@ -98,7 +98,6 @@ File `__init__.py` thực sự cần thiết vì Python sẽ biết thư mục c
         Animals                test.py
         
         $ python test.py
-        
         Printing members of the Mammals class
 	        Tiger 
 	        Elephant 
